@@ -1,0 +1,26 @@
+The following observations were made after a thorough review of the code:
+1. Naming Conventions:
+   Variable names are descriptive and follow standard Java naming conventions, which is good.
+
+2. Code Comments and Documentation:
+   The code lacks comments and documentation.
+   It's essential to add JavaDoc comments to classes and methods to explain their purpose and usage.
+
+3. Code Formatting:
+   The code appears to have appropriate formatting.
+
+4. Code Quality and Best Practices:
+   It's important to add validation and error handling, especially in methods like addCustomer and updateCustomer.
+   Verify the input data in the NewCustomerRequest for null values, invalid formats, or other potential issues and provide appropriate error handling.
+
+5. Unit Testing:
+   There are no unit tests included in the code. It's highly recommended to add tests, particularly for the CustomerRepository and the controller methods in Main.
+
+6. Separation of Concerns:
+    The Customer class serves as an entity class to represent customer data. This class demonstrates a clear separation of concerns by adhering to the Single Responsibility Principle (SRP).
+    The CustomerRepository interface defines methods for data access, specifically CRUD (Create, Read, Update, Delete) operations related to the Customer entity. This interface adheres to the Repository pattern, abstracting data access from the application's business logic.
+    The business logic can be separated from the Main class into a dedicated class(CustomerServiceImpl) that extends a CustomerService interface.
+    The Main class can also be renamed to CustomerController. This approach makes the codebase more maintainable, readable, and allows for easier testing of the business logic independently of the controller.
+
+7. Packages:
+    Organize the codebase into packages based on functionality. The codebase could be better organized into packages such as; entity, service, repository and controller
